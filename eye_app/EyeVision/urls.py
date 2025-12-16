@@ -20,4 +20,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',upload_page,name='home'),
+    path('disease/',predict_disease,name='predict_disease'),
+    path('power/', include('power_estimation.urls')),
+
 ]
