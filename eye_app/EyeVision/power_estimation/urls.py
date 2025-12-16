@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import estimate_power
+from .views import predict_power
 
 urlpatterns = [
-    path('estimate/', estimate_power, name='estimate_power'),
+    path('predict/', predict_power, name='predict_power')
 ]

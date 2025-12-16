@@ -15,12 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from eye_app.views import upload_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',upload_page,name='home'),
-    path('disease/',predict_disease,name='predict_disease'),
+   
+    path('disease/', include('disease_prediction.urls')),
     path('power/', include('power_estimation.urls')),
 
+    # keep home route LAST
+    path('', upload_page, name='home'),
 ]
+

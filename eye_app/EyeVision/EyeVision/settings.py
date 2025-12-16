@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'frontend',
     'power_estimation',
     'disease_prediction',
+    'eye_app',
 ]
 
 MIDDLEWARE = [
