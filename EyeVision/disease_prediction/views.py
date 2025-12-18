@@ -4,4 +4,7 @@ from django.http import JsonResponse
 # Create your views here.
 
 def predict_disease(request):
-    return JsonResponse({'message': 'Disease prediction working'})
+    return render(request, 'disease/disease_prediction.html')
+
+def disease_home(request):
+    return render(request, 'disease/disease_home.html')

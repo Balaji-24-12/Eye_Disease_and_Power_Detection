@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+def power_home(request):
+    return render(request, "power/power_home.html")
+
 def predict_power(request):
     if request.method == "POST":
         age = int(request.POST.get("age"))
