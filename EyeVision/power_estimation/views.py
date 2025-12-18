@@ -4,25 +4,16 @@ def power_home(request):
     return render(request, "power/power_home.html")
 
 def predict_power(request):
-    if request.method == "POST":
-        age = int(request.POST.get("age"))
-        blur = int(request.POST.get("blur"))
+    if request.method == 'POST':
+        # Dummy ML output
+        left_eye = -1.75
+        right_eye = -2.00
 
-        # dummy logic (ML comes later)
-        power = round(blur * 0.25, 2)
-
-        return render(request, "power_result.html", {
-            "age": age,
-            "power": power
-        })
-
-    return render(request, "power_result.html")
-
-
-def power_page(request):
-    if request.method == "POST":
-        return render(request, "power.html", {
-            "power": "-2.50 D (dummy output)"
+        return render(request, 'power/power_result.html', {
+            'left_eye': left_eye,
+            'right_eye': right_eye
         })
     return render(request, "power/power_home.html")
 
+def power_page(request):
+    return render(request, "power/power_home.html")

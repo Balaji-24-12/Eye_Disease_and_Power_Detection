@@ -6,13 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Power Estimation</h2>
+    <h2>Prediction Result</h2>
+<p>Disease: {{ result }}</p>
+<p>Confidence: {{ confidence }}</p>
 
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <input type="file" name="image" required>
-  <button type="submit">Estimate Power</button>
-</form>
+<a href="/">Go Home</a>
 
 </body>
 </html>

@@ -6,17 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+
 <h2>Disease Prediction</h2>
 
 <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="file" required>
-    <button type="submit">Predict</button>
+  {% csrf_token %}
+  <input type="file" name="image" required>
+  <button type="submit">Predict Disease</button>
 </form>
-
-{% if result %}
-<p><b>Result:</b> {{ result }}</p>
-{% endif %}
 
 </body>
 </html>
