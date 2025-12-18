@@ -8,3 +8,11 @@ def predict_disease(request):
 
 def disease_home(request):
     return render(request, 'disease/disease_home.html')
+
+
+def disease_page(request):
+    if request.method == "POST":
+        return render(request, "disease.html", {
+            "result": "No disease detected (dummy output)"
+        })
+    return render(request, "disease/disease_home.html")

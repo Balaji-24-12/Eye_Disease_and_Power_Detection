@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from eye_app.views import upload_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('eye_app.urls')),
+    path('', upload_page,name='home'),
     path('disease/', include('disease_prediction.urls')),
     path('power/', include('power_estimation.urls')),
 ]

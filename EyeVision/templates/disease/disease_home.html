@@ -6,8 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Disease Prediction Page</h1>
-    <p>Upload eye image here</p>
+<h2>Disease Prediction</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" required>
+    <button type="submit">Predict</button>
+</form>
+
+{% if result %}
+<p><b>Result:</b> {{ result }}</p>
+{% endif %}
 
 </body>
 </html>

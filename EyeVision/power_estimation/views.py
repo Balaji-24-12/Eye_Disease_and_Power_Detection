@@ -17,3 +17,12 @@ def predict_power(request):
         })
 
     return render(request, "power_result.html")
+
+
+def power_page(request):
+    if request.method == "POST":
+        return render(request, "power.html", {
+            "power": "-2.50 D (dummy output)"
+        })
+    return render(request, "power/power_home.html")
+

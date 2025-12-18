@@ -6,7 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Power Estimation Page</h1>
-    <p>Upload Image Here</p>
+       <h2>Power Estimation</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" required>
+    <button type="submit">Estimate</button>
+</form>
+
+{% if power %}
+<p><b>Estimated Power:</b> {{ power }}</p>
+{% endif %}
+<a href="/">Go Back</a>
 </body>
 </html>
