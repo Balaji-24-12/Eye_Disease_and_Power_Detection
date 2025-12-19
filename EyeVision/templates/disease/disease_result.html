@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Prediction Result</h2>
-<p>Disease: {{ result }}</p>
-<p>Confidence: {{ confidence }}</p>
+<h2>Prediction Result</h2>
 
-<a href="/">Go Home</a>
+<img src="{{ image_url }}" width="300"><br><br>
+
+<h3>Disease: {{ disease }} </h3>
+<h3>Confidence: {{ confidence }}% </h3>
+
+<a href="/disease/">Predict another image</a>
 
 </body>
 </html>

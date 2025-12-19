@@ -6,12 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Power Estimation</h2>
+<form method="post">
+    {% csrf_token %}
 
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <input type="file" name="image" required>
-  <button type="submit">Estimate Power</button>
+    <label>Age:</label>
+    <input type="number" name="age" required>
+
+    <label>Axial Length:</label>
+    <input type="text" name="axial_length" required>
+
+    <button type="submit">Predict Power</button>
+</form>
+
 </form>
 
 </body>

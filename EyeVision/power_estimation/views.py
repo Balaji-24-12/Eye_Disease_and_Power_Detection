@@ -1,19 +1,18 @@
 from django.shortcuts import render
+from .ml.predict import predict_power
 
 def power_home(request):
     return render(request, "power/power_home.html")
 
-def predict_power(request):
-    if request.method == 'POST':
-        # Dummy ML output
-        left_eye = -1.75
-        right_eye = -2.00
+def predict_power_view(request):
+    if request.method == "POST":
+        age = int(request.POST["age"])
+        axial_length = float(request.POST["axial_length"])
 
-        return render(request, 'power/power_result.html', {
-            'left_eye': left_eye,
-            'right_eye': right_eye
+        result = predict_power(age, axial_length)
+
+        return render(request, "power/power_result.html", {
+            "power": result
         })
-    return render(request, "power/power_home.html")
 
-def power_page(request):
     return render(request, "power/power_home.html")
